@@ -1,0 +1,37 @@
+build/
+*.new
+*.old
+*.bak
+*.revert
+*.restored
+*.pbuf
+libGL.so.1.baseline
+libGL.so.1.stub31
+lib/
+*.o
+*.a
+*.so
+*.so.*
+
+# Precompilados y generados por el build (se regeneran al compilar)
+*.d
+*.lo
+*.obj
+*.dylib
+*.dll
+*.exe
+*.gcda
+*.gcno
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+compile_commands.json
+Testing/
+/loritest
+core
+
+# Salida de tools/build_linux.sh y binarios de tests/hybrid
+build_linux/
+tests/hybrid/test_*
+!tests/hybrid/test_*.c
