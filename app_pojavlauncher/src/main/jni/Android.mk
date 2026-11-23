@@ -37,7 +37,7 @@ LOCAL_SRC_FILES := \
     stdio_is.c \
     driver_helper/nsbypass.c
 
-LOCAL_CFLAGS += -D__BIONIC_DEPRECATED_PAGE_SIZE_MACRO -include bits/page_size.h
+LOCAL_CFLAGS += -D__BIONIC_DEPRECATED_PAGE_SIZE_MACRO -include bits/page_size.h -D_GNU_SOURCE
 ifeq ($(TARGET_ARCH_ABI),arm64-v8a)
     LOCAL_CFLAGS += -DADRENO_POSSIBLE
 endif
