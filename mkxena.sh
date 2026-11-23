@@ -55,9 +55,9 @@ echo
 echo "== 4/4 Compilando la app ($VARIANT)"
 cd "$XENA"
 if [ "$VARIANT" = "release" ]; then
-  gradle assembleRelease --no-daemon
+  gradle assembleRelease
 else
-  gradle assembleDebug --no-daemon
+  gradle assembleDebug
 fi
 
 echo

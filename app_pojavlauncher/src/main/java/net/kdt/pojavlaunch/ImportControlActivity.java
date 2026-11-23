@@ -39,6 +39,7 @@ public class ImportControlActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (!Consent.ensure(this)) return;
         if(Tools.checkStorageInteractive(this)) {
             Tools.initStorageConstants(getApplicationContext());
         }else {

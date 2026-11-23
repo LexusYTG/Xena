@@ -1,0 +1,56 @@
+T CONTRATO DE LICENCIA DE USUARIO FINAL (EULA) Y POLÍTICA DE TRATAMIENTO DE DATOS PERSONALES
+P Versión 1.0 · Vigente desde el 23 de noviembre de 2026 · Redactado conforme a la legislación de la República Argentina.
+P Lea este documento completo antes de continuar. Al aceptarlo celebra un contrato de adhesión con el desarrollador (arts. 984 a 989 del Código Civil y Comercial de la Nación). Si no está de acuerdo, pulse «NO ACEPTO»: la aplicación no se conectará a nada y se cerrará.
+H 1. Identificación del desarrollador y responsable del tratamiento
+P Desarrollador, licenciante y responsable del tratamiento: Leonardo Sebastian Nivoida (Lexus YTG).
+P Domicilio legal: Concepción de la Sierra, provincia de Misiones, República Argentina.
+P Correo electrónico para consultas y ejercicio de derechos: leonpackpro@gmail.com
+P Aplicación: «Xena», paquete com.lexus2026.xena, en adelante «la aplicación». Es un lanzador de Minecraft Java Edition para Android, basado en PojavLauncher, que usa Lorica como capa gráfica.
+P «Usted» es la persona que instala y usa la aplicación y titular de los datos personales que se traten. El uso está destinado a personas mayores de 18 años.
+H 2. Objeto y licencia de uso
+P La aplicación descarga, instala y ejecuta versiones de Minecraft Java Edition, y opcionalmente cargadores de mods, mods y paquetes de mods. El desarrollador le otorga una licencia personal, revocable, no exclusiva e intransferible para instalarla y usarla en dispositivos de su propiedad o bajo su control legítimo.
+P Xena es un proyecto independiente: no está afiliado, respaldado ni patrocinado por Mojang, Microsoft ni por el equipo de PojavLauncher. Minecraft es marca de sus respectivos titulares. Para jugar en línea necesita una cuenta de Minecraft Java Edition propia.
+P Xena se distribuye bajo la licencia GPL-3.0 y conserva los avisos y licencias de los componentes que incorpora, como PojavLauncher y Lorica. Este contrato no limita los derechos que esas licencias le otorgan sobre el código fuente.
+H 3. Qué datos trata la aplicación y a qué se conecta
+P Permisos de Android que declara la aplicación, que Android le pide autorizar cuando corresponde y que usted puede negar o revocar desde los ajustes del dispositivo:
+B Internet y estado de la red: para iniciar sesión, descargar versiones, bibliotecas, recursos, mods y paquetes de mods.
+B Almacenamiento externo (lectura y escritura, solo hasta Android 9): permisos declarados por la aplicación para ese rango de versiones.
+B Notificaciones y servicios en primer plano: para avisarle de procesos que siguen en marcha mientras la aplicación no está en pantalla.
+B Micrófono (RECORD_AUDIO): permiso declarado por la aplicación; solo se activa si usted lo concede.
+P Datos que la aplicación guarda en su dispositivo: sus ajustes, las versiones, bibliotecas, mundos, mods y archivos de juego que descargue o cree, los registros (logs) de ejecución, y las cuentas que agregue (locales o de Microsoft), con los datos de sesión que cada servicio entregue para mantenerla abierta.
+P Servicios de terceros a los que la aplicación se conecta cuando usted usa la función correspondiente: inicio de sesión de Microsoft y Xbox (login.live.com, user.auth.xboxlive.com, auth.xboxlive.com), Minecraft Services (api.minecraftservices.com), Mojang (piston-meta.mojang.com, resources.download.minecraft.net, libraries.minecraft.net), CurseForge (api.curseforge.com, edge.forgecdn.net), Modrinth (api.modrinth.com), Fabric (meta.fabricmc.net), Quilt (meta.quiltmc.org), Forge (maven.minecraftforge.net), el espejo BMCLAPI (bmclapi2.bangbang93.com), OptiFine (optifine.net), downloads.betterthanadventure.net, repo1.maven.org y mc-heads.net (avatares de jugador).
+P Todo servicio al que su dispositivo se conecta recibe, como mínimo, su dirección IP y los datos técnicos propios de la conexión. Las cuentas de Microsoft y Minecraft son tratadas por Microsoft y Mojang bajo sus propias políticas. En mc-heads.net se consulta además el identificador del jugador cuyo avatar se muestra.
+P La aplicación no busca ni clasifica a propósito datos sensibles (art. 2 de la Ley 25.326).
+H 4. Finalidad, base del tratamiento y consentimiento
+P Finalidad única: hacer funcionar las características de la aplicación que usted use (iniciar sesión, descargar e iniciar el juego, mods y paquetes de mods, mostrar su avatar). Los datos no se usan con fines comerciales, publicitarios, de perfilado, estadísticos ni de entrenamiento de sistemas automatizados.
+P Base del tratamiento: su consentimiento libre, expreso e informado (art. 5 de la Ley 25.326), prestado al final de este documento mediante una casilla propia, separada de la aceptación del contrato. Puede retirarlo en cualquier momento (punto 8).
+P Carácter facultativo (art. 6 de la Ley 25.326): aceptar es facultativo. Si no acepta, no podrá usar la aplicación, que no se conectará a nada y se cerrará borrando sus propios datos.
+H 5. Destinatarios, cesión y transferencias internacionales
+P Los destinatarios de las conexiones son los servicios de terceros listados en el punto 3, que tratan los datos bajo sus propias políticas de privacidad y sobre los cuales el desarrollador no tiene control. Algunos de esos servicios operan fuera de la República Argentina; al aceptar, usted consiente esa transferencia internacional (art. 12 de la Ley 25.326) para las funciones que use.
+P El desarrollador no opera ningún servidor al que la aplicación envíe datos, no recibe datos suyos y no mantiene ninguna base de datos con información suya. Los datos que la aplicación guarda están en el almacenamiento de la aplicación dentro de su dispositivo.
+P Copias de seguridad: si usted activó las copias de seguridad de Android, el sistema operativo o su proveedor (por ejemplo, Google) podrían incluir datos de la aplicación en esas copias, bajo sus propias políticas. Eso lo decide y controla usted desde los ajustes de su dispositivo.
+H 6. Conservación y supresión
+P Los datos se conservan solo mientras la aplicación está instalada o usted no los elimine. Al desinstalarla o borrar sus datos desde los ajustes del dispositivo, se destruyen (art. 4, inc. 7). Si pulsa «NO ACEPTO», la aplicación borra sus propios datos y se cierra. Los datos que los servicios de terceros hayan recibido se rigen por sus políticas.
+H 7. Seguridad y confidencialidad
+P Los datos se almacenan en el espacio de la aplicación, aislado por el sistema Android. El desarrollador adopta medidas técnicas razonables para evitar su pérdida, adulteración o acceso no autorizado (art. 9 de la Ley 25.326), pero ningún sistema es infalible: la seguridad del dispositivo (bloqueo de pantalla, actualizaciones, origen de las aplicaciones) depende de usted.
+H 8. Sus derechos como titular de los datos
+P Usted tiene derecho de información, acceso, rectificación, actualización y supresión de sus datos personales (arts. 13 a 16 de la Ley 25.326 y Decreto 1558/2001) y puede retirar su consentimiento cuando quiera.
+P Ejercicio inmediato y sin intermediarios: elimine las cuentas desde el selector de cuentas de la aplicación, revoque los permisos desde los ajustes del dispositivo, borre los datos de la aplicación o desinstálela. Eso elimina los datos que la aplicación guarda en su dispositivo. Para los datos que tengan Microsoft, Mojang u otros servicios, debe dirigirse a ellos.
+P También puede dirigir su solicitud al desarrollador al correo indicado en el punto 1. Plazos legales: acceso, 10 días corridos desde el requerimiento; rectificación, actualización o supresión, 5 días hábiles (arts. 14 y 16).
+P El acceso es gratuito a intervalos no inferiores a seis meses, salvo que se acredite un interés legítimo (art. 14, inc. 3).
+P La AGENCIA DE ACCESO A LA INFORMACIÓN PÚBLICA, en su carácter de Órgano de Control de la Ley 25.326, tiene la atribución de atender las denuncias y reclamos que se interpongan con relación al incumplimiento de las normas sobre protección de datos personales. Sitio: argentina.gob.ar/aaip. También le asiste la acción de habeas data (art. 43 de la Constitución Nacional).
+H 9. Contenido de terceros, riesgos y responsabilidad
+P Los mods, paquetes de mods, cargadores y versiones los crean y alojan terceros y el desarrollador no los revisa. Instalarlos y ejecutarlos es bajo su responsabilidad: pueden contener errores o código malicioso. Ejecutar el juego puede calentar el dispositivo y consumir batería y almacenamiento.
+P La aplicación se ofrece «tal como está». En la medida que la ley lo permita, el desarrollador no responde por daños derivados de un uso contrario a este contrato, ni por fallas del dispositivo, del sistema operativo, de contenido o servicios de terceros. Nada de este contrato limita los derechos irrenunciables que le correspondan por la Ley 24.240 de Defensa del Consumidor ni por el Código Civil y Comercial.
+H 10. Modificaciones
+P Si el desarrollador modifica este documento de modo que afecte el tratamiento de sus datos o sus derechos, la aplicación volverá a pedir su aceptación antes de seguir funcionando. El texto vigente es el de esta pantalla.
+H 11. Verificación independiente
+P No tiene por qué creer lo anterior: puede comprobarlo. El código fuente de la aplicación está en github.com/LexusYTG/Xena. Sin herramientas: mantenga pulsado el icono de la aplicación, elija «Información de la aplicación» y revise los permisos concedidos en «Permisos» y el tráfico en «Uso de datos» (si existe).
+H 12. Ley aplicable y jurisdicción
+P Este contrato se rige por las leyes de la República Argentina, en particular las Leyes 25.326 (Protección de los Datos Personales), 11.723 (Propiedad Intelectual) y 24.240 (Defensa del Consumidor) y el Código Civil y Comercial de la Nación.
+P Para toda controversia serán competentes los tribunales ordinarios de la República Argentina del domicilio del desarrollador, sin perjuicio de los derechos que la normativa de defensa del consumidor le reconozca.
+H 13. Aceptación
+P Para continuar debe marcar las dos casillas siguientes. Son declaraciones distintas e independientes.
+C Leí y acepto este contrato de licencia (EULA) completo.
+C Doy mi consentimiento libre, expreso e informado para que la aplicación trate los datos descritos en el punto 3 y se conecte a los servicios de terceros del punto 5 cuando use las funciones que lo requieren.
+P Se registrará en este dispositivo la versión del documento y la fecha y hora de su aceptación.

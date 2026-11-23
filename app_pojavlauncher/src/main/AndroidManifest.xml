@@ -43,7 +43,7 @@
             android:value="ratio_float" />
 
         <activity
-            android:name=".TestStorageActivity"
+            android:name=".ConsentActivity"
             android:exported="true"
             android:label="@string/app_short_name"
             android:launchMode="singleTop">
@@ -53,6 +53,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".TestStorageActivity"
+            android:exported="false"
+            android:label="@string/app_short_name"
+            android:launchMode="singleTop" />
         <activity
             android:name=".LauncherActivity"
             android:label="@string/app_short_name"
