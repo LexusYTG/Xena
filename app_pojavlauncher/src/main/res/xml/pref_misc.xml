@@ -2,7 +2,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app2="http://schemas.android.com/apk/res-auto">
 
-    <net.kdt.pojavlaunch.prefs.BackButtonPreference/>
+    <net.kdt.pojavlaunch.prefs.BackButtonPreference android:title="@string/lx_back"/>
 
     <PreferenceCategory android:title="@string/preference_category_miscellaneous">
         <SwitchPreference
@@ -38,4 +38,16 @@
 
     </PreferenceCategory>
 
+
+    <PreferenceCategory android:title="@string/lx_cat_exp">
+        <SwitchPreference
+            android:key="dump_shaders"
+            android:title="@string/preference_shader_dump_title"
+            android:summary="@string/preference_shader_dump_description" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="bigCoreAffinity"
+            android:title="@string/preference_force_big_core_title"
+            android:summary="@string/preference_force_big_core_desc" />
+    </PreferenceCategory>
 </PreferenceScreen>

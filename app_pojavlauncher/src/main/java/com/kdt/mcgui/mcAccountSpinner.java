@@ -167,6 +167,7 @@ public class mcAccountSpinner extends AppCompatSpinner implements AdapterView.On
         if(position == 0){  // Add account button
             if(mAccountList.size() > 1){
                 ExtraCore.setValue(ExtraConstants.SELECT_AUTH_METHOD, true);
+                post(() -> pickAccount(-1));
             }
             return;
         }

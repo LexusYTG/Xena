@@ -10,6 +10,7 @@ import net.kdt.pojavlaunch.Tools;
 import net.kdt.pojavlaunch.customcontrols.buttons.ControlInterface;
 import net.kdt.pojavlaunch.prefs.LauncherPreferences;
 import net.kdt.pojavlaunch.utils.JSONUtils;
+import net.kdt.pojavlaunch.utils.MCOptionUtils;
 import net.objecthunter.exp4j.ExpressionBuilder;
 import net.objecthunter.exp4j.function.Function;
 
@@ -55,6 +56,7 @@ public class ControlData {
      */
     public String dynamicX, dynamicY;
     public boolean isToggle, passThruEnabled;
+    public boolean doubleTapToggle;
     public String name;
     public int[] keycodes;      //Should store up to 4 keys
     public float opacity;       //Alpha value from 0 to 1;
@@ -301,6 +303,7 @@ public class ControlData {
         valueMap.put("screen_width", Integer.toString(CallbackBridge.physicalWidth));
         valueMap.put("screen_height", Integer.toString(CallbackBridge.physicalHeight));
         valueMap.put("preferred_scale", Float.toString(LauncherPreferences.PREF_BUTTONSIZE));
+        valueMap.put("hotbar_right", Integer.toString(CallbackBridge.physicalWidth / 2 + (int)((MCOptionUtils.getMcScale() * 91) / LauncherPreferences.PREF_SCALE_FACTOR)));
 
         return valueMap;
     }

@@ -13,60 +13,37 @@ static def getDateSeconds() {
 }
 
 def getVersionName = {
-    // Get the last version tag, as well as the short head of the last commit
-    ByteArrayOutputStream TAG = new ByteArrayOutputStream()
-    ByteArrayOutputStream BRANCH = new ByteArrayOutputStream()
-    // Used by the fallback for github actions
-    ByteArrayOutputStream TAG_PART_COMMIT = new ByteArrayOutputStream()
-    String TAG_STRING
-
-    exec {
+    def runGit = { List args ->
         try {
-            commandLine 'git', 'describe', '--tags'
-            ignoreExitValue true
-            standardOutput = TAG
+            def process = new ProcessBuilder(["git"] + args)
+                .directory(rootProject.projectDir)
+                .redirectErrorStream(true)
+                .start()
+            def output = process.inputStream.getText("UTF-8").trim()
+            return process.waitFor() == 0 ? output : ""
         } catch (Exception e) {
-            e.printStackTrace();
+            return ""
         }
     }
 
-    if (TAG.toString() == "") {
-        exec {
-            // Fallback for action builds
-            try {
-                commandLine 'git', 'describe', '--always', '--tags'
-                ignoreExitValue true
-                standardOutput = TAG_PART_COMMIT
-            } catch (Exception e) {
-            }
-        }
+    String tag = runGit(["describe", "--tags"])
+    String tagPartCommit = ""
+    String tagString
+
+    if (tag == "") {
+        tagPartCommit = runGit(["describe", "--always", "--tags"])
     }
 
-
-    if(TAG.toString() != ""){
-        TAG_STRING = TAG.toString()
-    }else {
-        if(TAG_PART_COMMIT.toString().trim() == ""){
-             //Fallback no repo
-            return ("LOCAL-" + "${getDate()}")
-        }else {
-            // Used by github actions
-            TAG_STRING =  'gladiolus-' + "${getDate()}" + "-" + TAG_PART_COMMIT.toString().trim()
-        }
-
+    if (tag != "") {
+        tagString = tag
+    } else if (tagPartCommit == "") {
+        return "LOCAL-" + getDate()
+    } else {
+        tagString = "gladiolus-" + getDate() + "-" + tagPartCommit
     }
 
-    exec {
-        try {
-            commandLine 'git', 'branch', '--show-current'
-            ignoreExitValue true
-            standardOutput = BRANCH
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    return TAG_STRING.trim().replace("-g", "-") + "-" + BRANCH.toString().trim()
+    String branch = runGit(["branch", "--show-current"])
+    return tagString.trim().replace("-g", "-") + "-" + branch
 }
 
 def getCFApiKey = {
@@ -158,7 +135,7 @@ android {
         }
     }
 
-    ndkVersion = "25.2.9519653"
+    ndkVersion = "29.0.14206865"
 
     externalNativeBuild {
         ndkBuild {

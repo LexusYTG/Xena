@@ -24,7 +24,7 @@ public class LauncherPreferences {
     public static final String PREF_KEY_SKIP_NOTIFICATION_CHECK = "skipNotificationPermissionCheck";
 
     public static SharedPreferences DEFAULT_PREF;
-    public static String PREF_RENDERER = "opengles2";
+    public static String PREF_RENDERER = "lorica";
 
 	public static boolean PREF_IGNORE_NOTCH = false;
 	public static int PREF_NOTCH_SIZE = 0;
@@ -74,7 +74,9 @@ public class LauncherPreferences {
         Tools.initStorageConstants(ctx);
         boolean isDevicePowerful = isDevicePowerful(ctx);
 
-        PREF_RENDERER = DEFAULT_PREF.getString("renderer", "opengles2");
+        PREF_RENDERER = DEFAULT_PREF.getString("renderer", "lorica");
+        // migrar: renderizadores quitados
+        if("opengles2".equals(PREF_RENDERER) || "vulkan_zink".equals(PREF_RENDERER)) PREF_RENDERER = "lorica";
         PREF_BUTTONSIZE = DEFAULT_PREF.getInt("buttonscale", 100);
         PREF_MOUSESCALE = DEFAULT_PREF.getInt("mousescale", 100)/100f;
         PREF_MOUSESPEED = ((float)DEFAULT_PREF.getInt("mousespeed",100))/100f;

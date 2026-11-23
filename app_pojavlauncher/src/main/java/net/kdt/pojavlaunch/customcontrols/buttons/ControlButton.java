@@ -36,6 +36,14 @@ public class ControlButton extends TextView implements ControlInterface {
 
     protected boolean mIsToggled = false;
     protected boolean mIsPointerOutOfBounds = false;
+    private long mLastTapTime;
+
+    private boolean registerDoubleTap() {
+        long now = android.os.SystemClock.uptimeMillis();
+        boolean doubleTapped = now - mLastTapTime < 300;
+        mLastTapTime = doubleTapped ? 0 : now;
+        return doubleTapped;
+    }
 
     public ControlButton(ControlLayout layout, ControlData properties) {
         super(layout.getContext());
@@ -178,6 +186,7 @@ public class ControlButton extends TextView implements ControlInterface {
     @SuppressWarnings("BooleanMethodIsAlwaysInverted")
     public boolean triggerToggle(){
         //returns true a the toggle system is triggered
+        if(mProperties.isToggle && mProperties.doubleTapToggle && !registerDoubleTap()) return true;
         if(mProperties.isToggle){
             mIsToggled = !mIsToggled;
             invalidate();

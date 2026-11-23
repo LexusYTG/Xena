@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -67,14 +68,54 @@ public class LauncherActivity extends BaseActivity {
     private ModloaderInstallTracker mInstallTracker;
     private NotificationManager mNotificationManager;
 
-    /* Allows to switch from one button "type" to another */
+    /* Highlights the bottom tab that matches the visible screen */
     private final FragmentManager.FragmentLifecycleCallbacks mFragmentCallbackListener = new FragmentManager.FragmentLifecycleCallbacks() {
         @Override
         public void onFragmentResumed(@NonNull FragmentManager fm, @NonNull Fragment f) {
-            mSettingsButton.setImageDrawable(ContextCompat.getDrawable(getBaseContext(), f instanceof MainMenuFragment
-                    ? R.drawable.ic_menu_settings : R.drawable.ic_menu_home));
+            int active = -1;
+            if(f instanceof MainMenuFragment) active = 0;
+            else if(f instanceof net.kdt.pojavlaunch.fragments.ProfileTypeSelectFragment) active = 1;
+            else if(f instanceof LauncherPreferenceFragment) active = 3;
+            if(active != -1) markTab(active);
         }
     };
+
+    private final View[] mTabs = new View[4];
+
+    private void markTab(int active) {
+        int accent = ContextCompat.getColor(this, R.color.lx_accent);
+        int idle = ContextCompat.getColor(this, R.color.secondary_text);
+        for(int i = 0; i < mTabs.length; i++) {
+            TextView tab = (TextView) mTabs[i];
+            boolean on = i == active;
+            tab.setTextColor(on ? accent : idle);
+            androidx.core.widget.TextViewCompat.setCompoundDrawableTintList(tab, android.content.res.ColorStateList.valueOf(on ? accent : idle));
+            tab.setBackgroundResource(on ? R.drawable.lx_tab_active : 0);
+        }
+    }
+
+    private void bindTabs() {
+        mTabs[0] = findViewById(R.id.tab_play);
+        mTabs[1] = findViewById(R.id.tab_instances);
+        mTabs[2] = findViewById(R.id.tab_controls);
+        mTabs[3] = findViewById(R.id.tab_settings);
+        mTabs[0].setOnClickListener(v -> Tools.backToMainMenu(this));
+        mTabs[1].setOnClickListener(v -> {
+            if(!(currentFragment() instanceof net.kdt.pojavlaunch.fragments.ProfileTypeSelectFragment))
+                Tools.swapFragment(this, net.kdt.pojavlaunch.fragments.ProfileTypeSelectFragment.class,
+                        net.kdt.pojavlaunch.fragments.ProfileTypeSelectFragment.TAG, null);
+        });
+        mTabs[2].setOnClickListener(v -> startActivity(new android.content.Intent(this, CustomControlsActivity.class)));
+        mTabs[3].setOnClickListener(v -> {
+            if(!(currentFragment() instanceof LauncherPreferenceFragment))
+                Tools.swapFragment(this, LauncherPreferenceFragment.class, SETTING_FRAGMENT_TAG, null);
+        });
+        markTab(0);
+    }
+
+    private Fragment currentFragment() {
+        return getSupportFragmentManager().findFragmentById(mFragmentView.getId());
+    }
 
     /* Listener for the back button in settings */
     private final ExtraListener<String> mBackPreferenceListener = (key, value) -> {
@@ -86,7 +127,9 @@ public class LauncherActivity extends BaseActivity {
     private final ExtraListener<Boolean> mSelectAuthMethod = (key, value) -> {
         Fragment fragment = getSupportFragmentManager().findFragmentById(mFragmentView.getId());
         // Allow starting the add account only from the main menu, should it be moved to fragment itself ?
-        if(!(fragment instanceof MainMenuFragment)) return false;
+        if(fragment instanceof SelectAuthFragment
+                || fragment instanceof MicrosoftLoginFragment
+                || fragment instanceof net.kdt.pojavlaunch.fragments.LocalLoginFragment) return false;
 
         Tools.swapFragment(this, SelectAuthFragment.class, SelectAuthFragment.TAG, null);
         return false;
@@ -211,7 +254,7 @@ public class LauncherActivity extends BaseActivity {
         ProgressKeeper.addTaskCountListener(mDoubleLaunchPreventionListener);
         ProgressKeeper.addTaskCountListener((mProgressServiceKeeper = new ProgressServiceKeeper(this)));
 
-        mSettingsButton.setOnClickListener(mSettingButtonListener);
+        bindTabs();
         ProgressKeeper.addTaskCountListener(mProgressLayout);
         ExtraCore.addExtraListener(ExtraConstants.BACK_PREFERENCE, mBackPreferenceListener);
         ExtraCore.addExtraListener(ExtraConstants.SELECT_AUTH_METHOD, mSelectAuthMethod);

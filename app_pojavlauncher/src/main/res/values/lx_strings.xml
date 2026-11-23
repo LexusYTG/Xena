@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="lx_tools">Herramientas</string>
+    <string name="lx_tab_play">Jugar</string>
+    <string name="lx_tab_instances">Instancias</string>
+    <string name="lx_tab_controls">Controles</string>
+    <string name="lx_tab_settings">Ajustes</string>
+    <string name="lx_new_instance">Nueva instancia</string>
+    <string name="lx_new_instance_sub">Elegí cómo querés jugar</string>
+    <string name="lx_group_classic">Clásicas</string>
+    <string name="lx_group_mods">Con mods</string>
+    <string name="lx_login_title">Iniciar sesión</string>
+    <string name="lx_login_sub">Elegí el tipo de cuenta</string>
+    <string name="lx_login_ms">Cuenta Microsoft</string>
+    <string name="lx_login_ms_sub">Con tu cuenta oficial de Minecraft</string>
+    <string name="lx_login_local">Cuenta local</string>
+    <string name="lx_login_local_sub">Sin conexión, solo con un nombre</string>
+    <string name="lx_cat_game">Juego</string>
+    <string name="lx_cat_system">Sistema</string>
+    <string name="lx_cat_exp">Experimental</string>
+    <string name="lx_back">Volver</string>
+    <string name="lx_set_advanced">Avanzado</string>
+    <string name="lx_local_title">Cuenta local</string>
+    <string name="lx_local_sub">Elegí un nombre de usuario para jugar sin conexión</string>
+</resources>

@@ -1,137 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.kdt.DefocusableScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_app">
+    android:background="@color/background_app"
+    android:scrollbars="none">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-
-        android:paddingHorizontal="@dimen/fragment_padding_medium"
-        android:orientation="vertical">
-
-
-
-        <!-- Vanilla like version -->
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="14dp">
 
         <TextView
-            android:id="@+id/title_textview"
-            style="@style/TextAppearance.AppCompat.Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/create_profile_vanilla_like_versions"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/padding_large"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline2" />
-
-        <View
-            android:id="@+id/view"
-            style="@style/ThickDivider"
-            android:layout_width="match_parent"
-            android:layout_marginTop="@dimen/padding_large"
-            app:layout_constraintTop_toBottomOf="@+id/title_textview"
-            />
-
-        <com.kdt.mcgui.MineButton
-            android:id="@+id/vanilla_profile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/padding_large"
-            android:text="@string/create_profile_vanilla"
-            android:layout_marginTop="@dimen/padding_large"
-            app:layout_constraintTop_toBottomOf="@+id/view" />
-
-        <com.kdt.mcgui.MineButton
-            android:id="@+id/optifine_profile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/padding_large"
-            android:text="@string/create_profile_optifine"
-            android:layout_marginTop="@dimen/padding_large"
-            app:layout_constraintTop_toBottomOf="@+id/view" />
-
-
-
-        <!-- Modded versions -->
+            android:layout_marginStart="8dp"
+            android:text="@string/lx_new_instance"
+            android:textColor="@color/primary_text"
+            android:textSize="26sp"
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/title_modded_textview"
-            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="18dp"
+            android:text="@string/lx_new_instance_sub"
+            android:textColor="@color/secondary_text"
+            android:textSize="14sp" />
+
+        <TextView
+            style="@style/LxLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/padding_extra_extra_large"
-            android:text="@string/create_profile_modded_versions"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline" />
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="4dp"
+            android:text="@string/lx_group_classic" />
 
-        <View
-            android:id="@+id/view_modded"
-            style="@style/ThickDivider"
-            android:layout_width="match_parent"
-            android:layout_marginTop="@dimen/padding_large"
-            app:layout_constraintTop_toBottomOf="@+id/title_modded_textview"
-            />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+            <Button android:id="@+id/vanilla_profile" style="@style/LxCard" android:text="@string/create_profile_vanilla" />
+            <Button android:id="@+id/optifine_profile" style="@style/LxCard" android:text="@string/create_profile_optifine" />
+        </LinearLayout>
 
-        <com.kdt.mcgui.MineButton
-            android:id="@+id/modded_profile_fabric"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/padding_large"
-            android:layout_marginTop="@dimen/padding_large"
-            android:text="@string/modloader_dl_install_fabric" />
-
-        <com.kdt.mcgui.MineButton
-            android:id="@+id/modded_profile_quilt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/padding_large"
-            android:layout_marginTop="@dimen/padding_large"
-            android:text="@string/modloader_dl_install_quilt" />
-
-        <com.kdt.mcgui.MineButton
-            android:id="@+id/modded_profile_forge"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/padding_large"
-            android:layout_marginTop="@dimen/padding_large"
-            android:text="@string/modloader_dl_install_forge" />
-
-        <com.kdt.mcgui.MineButton
-            android:id="@+id/modded_profile_modpack"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/padding_large"
-            android:layout_marginTop="@dimen/padding_large"
-            android:text="@string/modpack_install_button" />
-
-        <com.kdt.mcgui.MineButton
-            android:id="@+id/modded_profile_bta"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/padding_large"
-            android:layout_marginTop="@dimen/padding_large"
-            android:text="@string/create_bta_profile" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline"
+        <TextView
+            style="@style/LxLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.55" />
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="4dp"
+            android:text="@string/lx_group_mods" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.25" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+            <Button android:id="@+id/modded_profile_fabric" style="@style/LxCard" android:text="@string/modloader_dl_install_fabric" />
+            <Button android:id="@+id/modded_profile_quilt" style="@style/LxCard" android:text="@string/modloader_dl_install_quilt" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+            <Button android:id="@+id/modded_profile_forge" style="@style/LxCard" android:text="@string/modloader_dl_install_forge" />
+            <Button android:id="@+id/modded_profile_modpack" style="@style/LxCard" android:text="@string/modpack_install_button" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+            <Button android:id="@+id/modded_profile_bta" style="@style/LxCard" android:text="@string/create_bta_profile" />
+            <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1" android:layout_margin="6dp" />
+        </LinearLayout>
     </LinearLayout>
 </com.kdt.DefocusableScrollView>
-
